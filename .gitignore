@@ -1,0 +1,32 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Experiment artifacts / run outputs
+artifacts/
+*.log
+*.jsonl
+
+# Model weights / checkpoints / caches (never commit)
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.npy
+*.npz
+*.pkl
+*.h5
+checkpoints/
+wandb/
+outputs/
+
+# Misc
+.pytest_cache/
+.mypy_cache/
+.DS_Store

@@ -1,0 +1,13 @@
+# Extra dependencies on top of upstream LLaVA-NeXT.
+#
+# torch / transformers / accelerate are installed by the upstream LLaVA-NeXT
+# requirements (pip install -e . in that checkout). Do NOT pin a conflicting
+# torch here; keep it aligned with the upstream environment you already use.
+
+numpy
+pillow
+decord>=0.6.0
+pyyaml
+
+# SurveillanceVQA 4-dim judge scoring (glm-4-flash)
+zhipuai

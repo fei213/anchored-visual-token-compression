@@ -1,0 +1,51 @@
+{
+  "CI": {
+    "file": "1_get_score_CI.py",
+    "extracted_by": "ast",
+    "prompt_texts": [
+      "\n    Evaluates the factual accuracy of the prediction using GPT-3.\n    Returns a factual accuracy score.\n    ",
+      "You are an AI assistant tasked with evaluating the factual accuracy of generative outputs for video-based question-answer pairs. Your task is to compare the predicted answer with the correct answer and determine if they are factually consistent.------##INSTRUCTIONS: - Focus on the factual consistency between the predicted answer and the correct answer. The predicted answer should correctly reflect the factual information presented in the video and should not contain any misinterpretations or misinformation.\n- Consider synonyms or paraphrases as valid matches, but only if the response is factually accurate and aligns with the video content.\n- Evaluate the factual accuracy of the prediction compared to the answer, do not assume anything from the world knowledge.\n- Assign a factual accuracy score between 0 and 5, where 5 indicates the highest level of factual consistency.\n- Base your evaluation on the following scale:\n  5: PERFECT match in terms of correctness with no factual errors.\n  4: Very little discrepancies in details, but the information generated is mostly correct and aligns with the video content.\n  3: Mostly correct information with minor discrepancies.\n  2: Very little correct information, though some parts are correct.\n  1: Mostly incorrect or irrelevant details, though some parts are correct.\n  0: COMPLETELY incorrect response with no factual consistency.\n",
+      "Please evaluate the following video-based question-answer pair:\n\nQuestion: ",
+      "\n\nProvide your evaluation only as a factual accuracy score where the factual accuracy score is an integer value between 0 and 5, with 5 indicating the highest level of factual consistency. Provide your evaluation only as a factual accuracy score, an integer between 0 and 5, and ONLY the number. Do not include any explanations, text, or JSON format. Just return the integer value as a plain number."
+    ],
+    "n_segments": 4
+  },
+  "DO": {
+    "file": "2_get_score_DO.py",
+    "extracted_by": "targeted-raw(DO 脚本语法损坏，按其原文定向恢复)",
+    "prompt_texts": [
+      "You are an AI assistant tasked with evaluating the detail orientation of generative outputs for video-based question-answer pairs.",
+      "Please evaluate the following video-based question-answer pair:",
+      "Provide your evaluation only as a factual accuracy score where the factual accuracy score is an integer value between 0 and 5, with 5 indicating the highest level of factual consistency.",
+      "Provide your evaluation only as a factual accuracy score, an integer between 0 and 5, and ONLY the number.",
+      "5: PERFECT match in terms of completeness and specificity with no errors.\\n",
+      "4: Very little omissions or lack of specific details, but mostly complete.\\n",
+      "2: Very little correct details, though some details are correct.\\n",
+      "1: Mostly incorrect details.\\n",
+      "0: COMPLETELY incorrect and incomplete response with generic points only."
+    ],
+    "n_segments": 9
+  },
+  "CU": {
+    "file": "3_get_score_CU.py",
+    "extracted_by": "ast",
+    "prompt_texts": [
+      "\n    Evaluates the factual accuracy of the prediction using GPT-3.\n    Returns a factual accuracy score.\n    ",
+      "You are an AI assistant tasked with evaluating the contextual understanding in results for video-based question-answer pairs. Your task is to compare the predicted answer with the correct answer and determine if the generated response aligns with the overall context of the video content.------##INSTRUCTIONS: - Evaluate whether the predicted answer aligns with the overall context of the video content. It should not provide information that is out of context or misaligned.\n- The predicted answer must capture the main themes and sentiments of the video.\n- Consider synonyms or paraphrases as valid matches.\n- Provide a single evaluation score that reflects the level of contextual understanding of the prediction compared to the answer.\n- Assign a contextual understanding score between 0 and 5, where 5 indicates the highest level of contextual understanding.\n- Base your evaluation on the following scale:\n  5: PERFECT match in terms of context, themes, and sentiments.\n  4: Very little misalignments in context or themes, but mostly correct.\n  3: Mostly correct themes or sentiments, but minor misalignments.\n  2: Very little correct elements, though parts are relevant.\n  1: Mostly incorrect context or themes, though some correct elements.\n  0: COMPLETELY incorrect context or themes with no correct elements.",
+      "Please evaluate the following video-based question-answer pair:\n\nQuestion: ",
+      "\n\nProvide your evaluation only as a factual accuracy score where the factual accuracy score is an integer value between 0 and 5, with 5 indicating the highest level of factual consistency. Provide your evaluation only as a factual accuracy score, an integer between 0 and 5, and ONLY the number. Do not include any explanations, text, or JSON format. Just return the integer value as a plain number."
+    ],
+    "n_segments": 4
+  },
+  "TU": {
+    "file": "4_get_score_TU.py",
+    "extracted_by": "ast",
+    "prompt_texts": [
+      "\n    Evaluates the factual accuracy of the prediction using GPT-3.\n    Returns a factual accuracy score.\n    ",
+      "You are an AI assistant tasked with evaluating the temporal understanding in results for video-based question-answer pairs. Your task is to compare the predicted answer with the correct answer and determine if they correctly reflect the temporal sequence of events or the specific details of an event in the video content.------##INSTRUCTIONS: - Focus on the temporal consistency between the predicted answer and the correct answer. The predicted answer should correctly reflect the sequence of events or details as they are presented in the video.\n- Consider synonyms or paraphrases as valid matches, but only if the temporal order and specific details are maintained.\n- Evaluate the temporal accuracy of the prediction compared to the answer.\n- Assign a temporal accuracy score between 0 and 5, where 5 indicates the highest level of temporal consistency.\n- Base your evaluation on the following scale:\n  5: PERFECT match in terms of correctness, sequence and details.\n  4: Very little discrepancies in details, but the sequence or event descriptions are mostly correct.\n  3: Mostly correct depiction of sequences, but minor discrepancies in details.\n  2: Very little correct elements, though some events are correct.\n  1: Mostly incorrect sequence or event description, very few correct temporal or contextual elements, \n  0: COMPLETELY incorrect sequence or event description with no correct temporal or contextual elements.",
+      "Please evaluate the following video-based question-answer pair:\n\nQuestion: ",
+      "\n\nProvide your evaluation only as a factual accuracy score where the factual accuracy score is an integer value between 0 and 5, with 5 indicating the highest level of factual consistency. Provide your evaluation only as a factual accuracy score, an integer between 0 and 5, and ONLY the number. Do not include any explanations, text, or JSON format. Just return the integer value as a plain number."
+    ],
+    "n_segments": 4
+  }
+}
